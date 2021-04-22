@@ -1,27 +1,39 @@
 # ETL Pipeline with Luigi
-This repository is about building ETL pipeline with Luigi use local data and store into local data warehouse
+This repository is about building ETL pipeline with Luigi use local data and store into local data warehouse<br>
+
+![image](https://user-images.githubusercontent.com/71366136/115646008-973a7f00-a34b-11eb-9465-84557b6f84cc.png)
+
 
 # What is Luigi?
 From the [GitHub](https://github.com/spotify/luigi) page, **Luigi is a Python (3.6, 3.7, 3.8, 3.9 tested) package that helps you build complex pipelines of batch jobs. It handles dependency resolution, workflow management, visualization, handling failures, command line integration, and much more.**<br>
 ![image](https://user-images.githubusercontent.com/71366136/115017156-47d5f800-9ee0-11eb-85c1-edc339e8245a.png)
 
-# Get Started
+# Installation
+Use git to clone this repository
+
+```
+git clone https://github.com/Jomen034/etl-pipeline-with-luigi.git
+```
+
+## Prerequisite
 Install `Luigi` with your command prompt
 
-```pip install luigi```
+```
+pip install luigi
+```
 
 In this task, I also used `pandas` and `sqlitee3`. Install it first if you haven't
 
-```pip install pandas```
+```
+pip install pandas
+```
 
-```pip install db-sqlite3```
+```
+pip install db-sqlite3
+```
 
-# Run the ETL
-_**Intro...**_
-Luigi provides user to see the whole process by monitoring into a web-based interface. For this purpose, **run `luigid`** from your command prompt that opened in your file directory
-
-_**Next...**_
-As we need to extract the data first that assign in the 1st Task as `Class ExtractData(luigi.Task)`, so after you go to your file directory, run this command first:
+## Usage
+Before all, set your file directory first. If all of them already clear, let's extract the data by calling the `class ExtractData` with the following command 
 
 ```python -m luigi --module etl_pipeline ExtractData --local-scheduler```
 
@@ -48,6 +60,7 @@ This progress looks :) because there were no failed tasks or missing dependencie
 
 ===== Luigi Execution Summary =====
 ```
+
 Now the extracted data already in your directory. Next we run the **`TL`** session with this command:
 
 ```python -m luigi --module etl_pipeline LoadData --local-scheduler```
@@ -85,3 +98,5 @@ This progress looks :) because there were no failed tasks or missing dependencie
 ===== Luigi Execution Summary =====
 ```
 
+# Contact
+For further information about this repository, you can reach me on <jomenpardede@gmail.com>
